@@ -42,6 +42,7 @@ extension CameraVC: AVCapturePhotoCaptureDelegate, AVSpeechSynthesizerDelegate {
                 self.objectNameLabel.text = unknownMessage
                 self.confidenceLabel.text = ""
                 synthesizeSpeech(from: unknownMessage)
+                break
             } else {
                 let objectIdentifier = classification.identifier
                 let confidence = Int(classification.confidence * 100)
