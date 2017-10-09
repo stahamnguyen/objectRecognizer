@@ -47,6 +47,11 @@ extension CameraVC {
     }
     
     @objc internal func didTapCameraView() {
+        
+        self.cameraView.isUserInteractionEnabled = false
+        self.spinner.isHidden = false
+        self.spinner.startAnimating()
+        
         let settings = AVCapturePhotoSettings()
         let previewPixelType = settings.__availablePreviewPhotoPixelFormatTypes.first!
         let previewFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPixelType, kCVPixelBufferWidthKey as String: 160, kCVPixelBufferHeightKey as String: 160]

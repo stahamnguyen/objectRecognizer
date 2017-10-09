@@ -70,14 +70,20 @@
                                     <action selector="flashButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NKx-5E-lBh"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="a1k-vP-6Ft">
+                                <rect key="frame" x="346" y="642" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bVv-oV-nlT" secondAttribute="bottom" constant="20" id="9Jq-cL-jNJ"/>
                             <constraint firstItem="0zo-Rz-ngy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9T5-ZO-WMn"/>
+                            <constraint firstItem="a1k-vP-6Ft" firstAttribute="centerX" secondItem="px9-5K-L8B" secondAttribute="centerX" id="9aj-CR-9ia"/>
                             <constraint firstItem="0zo-Rz-ngy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="BKO-3K-SLH"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NO0-Es-UDl"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aKX-CK-wgr"/>
+                            <constraint firstItem="a1k-vP-6Ft" firstAttribute="centerY" secondItem="px9-5K-L8B" secondAttribute="centerY" id="aiU-fC-qXj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="px9-5K-L8B" secondAttribute="trailing" constant="20" id="azW-fy-ff3"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jrr-lu-ZSe"/>
                             <constraint firstItem="bVv-oV-nlT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nZJ-7B-QBS"/>
@@ -93,6 +99,7 @@
                         <outlet property="confidenceLabel" destination="ebD-k1-qUB" id="gtL-1v-165"/>
                         <outlet property="infoBackgroundView" destination="0zo-Rz-ngy" id="IIN-sF-mgx"/>
                         <outlet property="objectNameLabel" destination="kos-OW-N0T" id="OcB-LU-eUU"/>
+                        <outlet property="spinner" destination="a1k-vP-6Ft" id="NI3-7h-mlN"/>
                         <outlet property="toggleFlashButton" destination="bVv-oV-nlT" id="6J7-5U-oJC"/>
                     </connections>
                 </viewController>

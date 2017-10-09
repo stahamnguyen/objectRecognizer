@@ -19,6 +19,7 @@ class CameraVC: UIViewController {
     
     internal var photoData: Data?
     internal var flashState : FlashState = .off
+    internal var speechSynthesizer = AVSpeechSynthesizer()
     
     @IBOutlet weak var infoBackgroundView: CustomView!
     @IBOutlet weak var capturedImageView: CustomImageView!
@@ -26,10 +27,13 @@ class CameraVC: UIViewController {
     @IBOutlet weak var objectNameLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        spinner.isHidden = true
+        speechSynthesizer.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
