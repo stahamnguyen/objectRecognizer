@@ -19,7 +19,7 @@ Swift 4
 
 ## Performed skills:
 1. Use Storyboard
-2. Implement CoreML
+2. Implement CoreML to recognize an object through its photo
 3. Implement AVCapturePhoto to take and process photo
 4. Implement AVSpeechSynthesizer to speak out the result
 
