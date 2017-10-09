@@ -13,11 +13,12 @@ import Vision
 
 class CameraVC: UIViewController {
     
-    var captureSession: AVCaptureSession!
-    var cameraOutput: AVCapturePhotoOutput!
-    var previewLayer: AVCaptureVideoPreviewLayer!
+    internal var captureSession: AVCaptureSession!
+    internal var cameraOutput: AVCapturePhotoOutput!
+    internal var previewLayer: AVCaptureVideoPreviewLayer!
     
-    var photoData: Data?
+    internal var photoData: Data?
+    internal var flashState : FlashState = .off
     
     @IBOutlet weak var infoBackgroundView: CustomView!
     @IBOutlet weak var capturedImageView: CustomImageView!
@@ -28,7 +29,7 @@ class CameraVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,86 +45,14 @@ class CameraVC: UIViewController {
         setupCameraOutputPreview()
     }
     
-    func addTapGestureToCameraView() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapCameraView))
-        tap.numberOfTapsRequired = 1
-        
-        cameraView.addGestureRecognizer(tap)
-    }
-    
-    func setupCameraOutputPreview() {
-        captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .hd1920x1080
-        
-        let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
-        
-        do {
-            let input = try AVCaptureDeviceInput(device: backCamera!)
-            if captureSession.canAddInput(input) {
-                captureSession.addInput(input)
-            }
-            
-            cameraOutput = AVCapturePhotoOutput()
-            if captureSession.canAddOutput(cameraOutput) {
-                captureSession.addOutput(cameraOutput!)
-            }
-            
-            previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-            previewLayer.videoGravity = .resizeAspect
-            previewLayer.connection?.videoOrientation = .portrait
-            
-            cameraView.layer.addSublayer(previewLayer!)
-            captureSession.startRunning()
-        } catch {
-            debugPrint(error)
-        }
-    }
-    
-    @objc func didTapCameraView() {
-        let settings = AVCapturePhotoSettings()
-        let previewPixelType = settings.__availablePreviewPhotoPixelFormatTypes.first!
-        let previewFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPixelType, kCVPixelBufferWidthKey as String: 160, kCVPixelBufferHeightKey as String: 160]
-        
-        settings.previewPhotoFormat = previewFormat
-        
-        cameraOutput.capturePhoto(with: settings, delegate: self)
-    }
-    
-    func resultsMethod(request: VNRequest, error: Error?) {
-        guard let results = request.results as? [VNClassificationObservation] else { return }
-        
-        for classification in results {
-            if classification.confidence < 0.5 {
-                self.objectNameLabel.text = "Not sure what this is. Please try again!"
-                self.confidenceLabel.text = ""
-            } else {
-                self.objectNameLabel.text = classification.identifier
-                self.confidenceLabel.text = "CONFIDENCE: \(Int(classification.confidence * 100))%"
-                break
-            }
+    @IBAction func flashButtonPressed(_ sender: Any) {
+        switch flashState {
+        case .off:
+            toggleFlashButton.setTitle("FLASH ON", for: .normal)
+            flashState = .on
+        default:
+            toggleFlashButton.setTitle("FLASH OFF", for: .normal)
+            flashState = .off
         }
     }
 }
-
-extension CameraVC: AVCapturePhotoCaptureDelegate {
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        if let error = error {
-            debugPrint(error)
-        } else {
-            photoData = photo.fileDataRepresentation()
-            
-            do {
-                let model = try VNCoreMLModel(for: SqueezeNet().model)
-                let request = VNCoreMLRequest(model: model, completionHandler: resultsMethod)
-                let handler = VNImageRequestHandler(data: photoData!)
-                try handler.perform([request])
-            } catch {
-                
-            }
-            
-            let image = UIImage(data: photoData!)
-            self.capturedImageView.image = image
-        }
-    }
-}
-

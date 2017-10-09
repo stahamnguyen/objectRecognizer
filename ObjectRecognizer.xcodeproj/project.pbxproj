@@ -10,6 +10,9 @@
 		EB4EE3981F8BEBCB00B361B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4EE3971F8BEBCB00B361B5 /* AVFoundation.framework */; };
 		EB4EE39A1F8BEC2700B361B5 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4EE3991F8BEC2700B361B5 /* CoreML.framework */; };
 		EB4EE39E1F8BF18900B361B5 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB4EE39D1F8BF15100B361B5 /* SqueezeNet.mlmodel */; };
+		EB4EE3A11F8BFB9700B361B5 /* ProcessCapturedImageUsingCoreML.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4EE3A01F8BFB9700B361B5 /* ProcessCapturedImageUsingCoreML.swift */; };
+		EB4EE3A31F8BFC4900B361B5 /* SetupFunctionalities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4EE3A21F8BFC4900B361B5 /* SetupFunctionalities.swift */; };
+		EB4EE3A51F8BFD2F00B361B5 /* FlashState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4EE3A41F8BFD2F00B361B5 /* FlashState.swift */; };
 		EBBC4D331F8A680800536977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC4D321F8A680800536977 /* AppDelegate.swift */; };
 		EBBC4D351F8A680800536977 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC4D341F8A680800536977 /* CameraVC.swift */; };
 		EBBC4D381F8A680800536977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBC4D361F8A680800536977 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		EB4EE3971F8BEBCB00B361B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EB4EE3991F8BEC2700B361B5 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 		EB4EE39D1F8BF15100B361B5 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		EB4EE3A01F8BFB9700B361B5 /* ProcessCapturedImageUsingCoreML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessCapturedImageUsingCoreML.swift; sourceTree = "<group>"; };
+		EB4EE3A21F8BFC4900B361B5 /* SetupFunctionalities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupFunctionalities.swift; sourceTree = "<group>"; };
+		EB4EE3A41F8BFD2F00B361B5 /* FlashState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashState.swift; sourceTree = "<group>"; };
 		EBBC4D2F1F8A680800536977 /* ObjectRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBC4D321F8A680800536977 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBC4D341F8A680800536977 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -58,6 +64,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB4EE39F1F8BFB5F00B361B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB4EE3A01F8BFB9700B361B5 /* ProcessCapturedImageUsingCoreML.swift */,
+				EB4EE3A21F8BFC4900B361B5 /* SetupFunctionalities.swift */,
+				EB4EE3A41F8BFD2F00B361B5 /* FlashState.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EBBC4D261F8A680700536977 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +94,7 @@
 		EBBC4D311F8A680800536977 /* ObjectRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				EB4EE39F1F8BFB5F00B361B5 /* Extensions */,
 				EBBC4D461F8A6B8E00536977 /* Model */,
 				EBBC4D451F8A6B8700536977 /* View */,
 				EBBC4D441F8A6B7F00536977 /* Controller */,
@@ -191,9 +208,12 @@
 				EB4EE39E1F8BF18900B361B5 /* SqueezeNet.mlmodel in Sources */,
 				EBBC4D4A1F8A704B00536977 /* CustomButton.swift in Sources */,
 				EBBC4D481F8A6E8B00536977 /* CustomView.swift in Sources */,
+				EB4EE3A51F8BFD2F00B361B5 /* FlashState.swift in Sources */,
 				EBBC4D351F8A680800536977 /* CameraVC.swift in Sources */,
 				EBBC4D331F8A680800536977 /* AppDelegate.swift in Sources */,
 				EBBC4D4C1F8A70A700536977 /* CustomImageView.swift in Sources */,
+				EB4EE3A11F8BFB9700B361B5 /* ProcessCapturedImageUsingCoreML.swift in Sources */,
+				EB4EE3A31F8BFC4900B361B5 /* SetupFunctionalities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
