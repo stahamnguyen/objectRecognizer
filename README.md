@@ -1,6 +1,5 @@
 # Object Recognizer
 This is my own project building an iOS application in Swift about using machine learning and speech synthesizer to identify objects through captured image and speak out its name to the user.
-The creation of this app is inspired by a course I took in Udemy.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
