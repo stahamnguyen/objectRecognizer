@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB4EE3981F8BEBCB00B361B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4EE3971F8BEBCB00B361B5 /* AVFoundation.framework */; };
+		EB4EE39A1F8BEC2700B361B5 /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4EE3991F8BEC2700B361B5 /* CoreML.framework */; };
+		EB4EE39E1F8BF18900B361B5 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EB4EE39D1F8BF15100B361B5 /* SqueezeNet.mlmodel */; };
 		EBBC4D331F8A680800536977 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC4D321F8A680800536977 /* AppDelegate.swift */; };
 		EBBC4D351F8A680800536977 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC4D341F8A680800536977 /* CameraVC.swift */; };
 		EBBC4D381F8A680800536977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBBC4D361F8A680800536977 /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB4EE3971F8BEBCB00B361B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EB4EE3991F8BEC2700B361B5 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		EB4EE39D1F8BF15100B361B5 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		EBBC4D2F1F8A680800536977 /* ObjectRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBC4D321F8A680800536977 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBBC4D341F8A680800536977 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4EE39A1F8BEC2700B361B5 /* CoreML.framework in Frameworks */,
+				EB4EE3981F8BEBCB00B361B5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB4EE3961F8BEBCB00B361B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB4EE3991F8BEC2700B361B5 /* CoreML.framework */,
+				EB4EE3971F8BEBCB00B361B5 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EBBC4D261F8A680700536977 = {
 			isa = PBXGroup;
 			children = (
 				EBBC4D311F8A680800536977 /* ObjectRecognizer */,
 				EBBC4D301F8A680800536977 /* Products */,
+				EB4EE3961F8BEBCB00B361B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +111,7 @@
 		EBBC4D461F8A6B8E00536977 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB4EE39D1F8BF15100B361B5 /* SqueezeNet.mlmodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB4EE39E1F8BF18900B361B5 /* SqueezeNet.mlmodel in Sources */,
 				EBBC4D4A1F8A704B00536977 /* CustomButton.swift in Sources */,
 				EBBC4D481F8A6E8B00536977 /* CustomView.swift in Sources */,
 				EBBC4D351F8A680800536977 /* CameraVC.swift in Sources */,
@@ -311,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YH75Q9DPAZ;
 				INFOPLIST_FILE = ObjectRecognizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Staham.ObjectRecognizer;
@@ -325,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YH75Q9DPAZ;
 				INFOPLIST_FILE = ObjectRecognizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Staham.ObjectRecognizer;

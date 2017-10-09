@@ -19,32 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fg2-D2-xVC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="px9-5K-L8B" customClass="CustomImageView" customModule="ObjectRecognizer" customModuleProvider="target">
-                                        <rect key="frame" x="319" y="588" width="75" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="4ZP-wI-qAA"/>
-                                            <constraint firstAttribute="width" constant="75" id="k19-xH-9AE"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-oV-nlT" customClass="CustomButton" customModule="ObjectRecognizer" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="686" width="100" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="QqW-Ug-oYN"/>
-                                            <constraint firstAttribute="height" constant="30" id="wkf-7S-HRC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
-                                        <state key="normal" title="FLASH TOGGLE"/>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="px9-5K-L8B" secondAttribute="trailing" constant="20" id="Oh1-qY-tsY"/>
-                                    <constraint firstAttribute="bottom" secondItem="px9-5K-L8B" secondAttribute="bottom" constant="20" id="cPs-Ft-GcI"/>
-                                    <constraint firstAttribute="bottom" secondItem="bVv-oV-nlT" secondAttribute="bottom" constant="20" id="hkm-9M-vdb"/>
-                                    <constraint firstItem="bVv-oV-nlT" firstAttribute="leading" secondItem="fg2-D2-xVC" secondAttribute="leading" constant="20" id="rAM-oA-Lx9"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zo-Rz-ngy" customClass="CustomView" customModule="ObjectRecognizer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="50" width="374" height="60"/>
@@ -76,15 +51,36 @@
                                     <constraint firstItem="qbJ-eK-wRB" firstAttribute="leading" secondItem="0zo-Rz-ngy" secondAttribute="leading" constant="8" id="rqP-Hd-PLp"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="px9-5K-L8B" customClass="CustomImageView" customModule="ObjectRecognizer" customModuleProvider="target">
+                                <rect key="frame" x="319" y="588" width="75" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4ZP-wI-qAA"/>
+                                    <constraint firstAttribute="width" constant="75" id="k19-xH-9AE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-oV-nlT" customClass="CustomButton" customModule="ObjectRecognizer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="686" width="100" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="QqW-Ug-oYN"/>
+                                    <constraint firstAttribute="height" constant="30" id="wkf-7S-HRC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                <state key="normal" title="FLASH TOGGLE"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bVv-oV-nlT" secondAttribute="bottom" constant="20" id="9Jq-cL-jNJ"/>
                             <constraint firstItem="0zo-Rz-ngy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9T5-ZO-WMn"/>
                             <constraint firstItem="0zo-Rz-ngy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="BKO-3K-SLH"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NO0-Es-UDl"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aKX-CK-wgr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="px9-5K-L8B" secondAttribute="trailing" constant="20" id="azW-fy-ff3"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jrr-lu-ZSe"/>
+                            <constraint firstItem="bVv-oV-nlT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nZJ-7B-QBS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0zo-Rz-ngy" secondAttribute="trailing" constant="20" id="oxo-BH-C12"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="px9-5K-L8B" secondAttribute="bottom" constant="20" id="vWB-jE-Lxd"/>
                             <constraint firstItem="fg2-D2-xVC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wO6-de-P1o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
